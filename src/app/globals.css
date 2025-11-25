@@ -41,8 +41,9 @@ body {
 .svg-background {
   background-image: url("../../public/bass_clef-light.svg"); /* path to your SVG file */
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 90% 100%; /* makes the SVG fill the div */
+  background-position-x: center;
+  background-position-y: top;
+  background-size: 100%; /* makes the SVG fill the div */
 }
 @media (prefers-color-scheme: dark) {
   .svg-background {

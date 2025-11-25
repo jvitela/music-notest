@@ -4,7 +4,7 @@ import MusicNote from "../components/MusicNote";
 import { useCallback, useState } from "react";
 
 const Notes = ["c", "h", "a", "g", "f", "e", "d", "c", "h", "a", "g", "f", "e"];
-const Cells = Array.from({ length: 3 }, (_, idx) => idx);
+const Cells = Array.from({ length: 4 }, (_, idx) => idx);
 const EmptyAnswers = Cells.map(() => "");
 
 const getRandomKeys = (length: number) =>
