@@ -7,18 +7,22 @@ const Notes = ["c", "h", "a", "g", "f", "e", "d", "c", "h", "a", "g", "f", "e"];
 const Cells = Array.from({ length: 4 }, (_, idx) => idx);
 const EmptyAnswers = Cells.map(() => "");
 
-const getRandomKeys = (length: number) =>
-  Array.from({ length }, () => {
-    const max = Notes.length - 1;
-    const idx = Math.round(Math.random() * max);
-    const note = Notes[idx];
-    return `${note}-${idx}`;
-  });
+function getRandomKeys(n: number): string[] {
+  if (n > Notes.length) {
+    throw new Error("Requested more elements than available in Notes");
+  }
 
-function getState(input: string, note: string) {
-  if (input == "") return "init";
-  if (input == note) return "right";
-  return "wrong";
+  // Generate key values
+  const shuffled = Notes.map((note, idx) => `${note}-${idx}`);
+
+  // Fisher–Yates shuffle
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  // Take the first n elements
+  return shuffled.slice(0, n);
 }
 
 export default function Home() {
@@ -59,7 +63,7 @@ export default function Home() {
                   colValues[col] == `${note}-${row}` && (
                     <MusicNote
                       value={note}
-                      state={getState(answers[col], note)}
+                      answer={answers[col]}
                       hasBorders={row == 0 || row == rows.length - 1}
                       onSelected={(answer) => saveAnswer(col, answer)}
                     />
