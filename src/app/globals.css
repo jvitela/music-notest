@@ -24,3 +24,25 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.bg-horiz-line:nth-child(3),
+.bg-horiz-line:nth-child(5),
+.bg-horiz-line:nth-child(7),
+.bg-horiz-line:nth-child(9),
+.bg-horiz-line:nth-child(11)
+ {
+  background-image: linear-gradient(var(--foreground), var(--foreground));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 1px;
+}
+
+/* Ensure the app can fill the full viewport */
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
