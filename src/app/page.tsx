@@ -3,13 +3,14 @@
 import MusicNote from "../components/MusicNote";
 import { useCallback, useState } from "react";
 
-const Notes = ["e", "f", "g", "a", "h", "c", "d", "e", "f", "g", "a", "h", "c"];
+const Notes = ["c", "h", "a", "g", "f", "e", "d", "c", "h", "a", "g", "f", "e"];
 const Cells = Array.from({ length: 3 }, (_, idx) => idx);
 const EmptyAnswers = Cells.map(() => "");
 
 const getRandomKeys = (length: number) =>
   Array.from({ length }, () => {
-    const idx = Math.round(Math.random() * Notes.length);
+    const max = Notes.length - 1;
+    const idx = Math.round(Math.random() * max);
     const note = Notes[idx];
     return `${note}-${idx}`;
   });
@@ -42,7 +43,7 @@ export default function Home() {
   };
 
   return (
-    <div className="h-screen w-full bg-zinc-50 dark:bg-black">
+    <div className="h-screen w-full bg-zinc-50 dark:bg-black svg-background">
       <main className="h-full w-full grid grid-rows-16">
         {rows.map((note, row) => (
           <section
