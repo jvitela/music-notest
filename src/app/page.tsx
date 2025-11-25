@@ -3,7 +3,7 @@
 import MusicNote from "../components/MusicNote";
 import { useCallback, useState } from "react";
 
-const Notes = ["c", "h", "a", "e", "f", "g", "d", "c", "h", "a", "g", "f", "e"];
+const Notes = ["e", "f", "g", "a", "h", "c", "d", "e", "f", "g", "a", "h", "c"];
 const Cells = Array.from({ length: 3 }, (_, idx) => idx);
 const EmptyAnswers = Cells.map(() => "");
 

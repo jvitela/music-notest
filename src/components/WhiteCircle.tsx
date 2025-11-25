@@ -25,7 +25,7 @@ function OptionButton({ value, onClick }: OptionButtonProps) {
   );
 }
 
-const values = ["f", "a", "c", "e", "g", "h", "d"];
+const values = ["c", "d", "g", "f", "e", "a", "h"];
 
 export default function WhiteCircle({
   className = "",
