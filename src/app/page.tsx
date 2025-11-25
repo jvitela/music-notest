@@ -41,13 +41,6 @@ export default function Home() {
     setAnswers(EmptyAnswers);
   };
 
-  // useEffect(() => {
-  //   if (colValues.length !== Cells.length) {
-  //     console.log("Initialising");
-  //     setTimeout(() => setColValues(getRandomKeys(Cells.length)), 100);
-  //   }
-  // }, [colValues, setColValues]);
-
   return (
     <div className="h-screen w-full bg-zinc-50 dark:bg-black">
       <main className="h-full w-full grid grid-rows-16">
